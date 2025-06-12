@@ -1,4 +1,4 @@
-
+#include "../includes/push_swap.h"
 
 
 void   skip_sep(char *str, char sep)
