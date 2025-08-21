@@ -2,16 +2,15 @@
 
 int valid_entries(char *num)
 {
-    if (!(*num == '+' || *num == '-' 
-            && (*num >= '0' && *num <= '9')))
-            return (0);
-    else if (!(*num == '+' || *num == '-' 
-            || (*num >= '0' && *num <= '9')))
+    if (*num == '+' || *num == '-')
+        num++;
+    if (*num == '\0')
         return (0);
-    while (*++num)
+    while (*num)
 	{
-		if (!(*num >= '0' && *num <= '9'))
+		if (*num < '0' || *num > '9')
 			return (0);
+		num++;
 	}
     return (1);
 }
