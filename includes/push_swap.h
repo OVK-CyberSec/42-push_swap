@@ -21,6 +21,7 @@ typedef struct s_stack_node //A container of data enclosed in {} braces. `s_` fo
 //***Handle errors
 int				error_syntax(char *str_n); 
 int				error_duplicate(t_stack_node *a, int n);
+int				valid_entries(char *num);
 void			free_stack(t_stack_node **stack);
 void			free_errors(t_stack_node **a);
 

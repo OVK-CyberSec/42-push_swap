@@ -83,23 +83,3 @@ char	**ft_split(char const *s, char c)
 	words[j] = 0;
 	return (words);
 }
-/*
-int main(void)
-{
-	char *str = "Ceci est un test !";
-	char sep = ' ';
-	char **result = ft_split(str, sep);
-	int i = 0;
-
-	printf("Résultat de ft_split(\"%s\", '%c'):\n", str, sep);
-	while (result[i])
-	{
-		printf("Mot %d : %s\n", i, result[i]);
-		free(result[i]); // Libère chaque mot
-		i++;
-	}
-	free(result); // Libère le tableau de pointeurs
-
-	return 0;
-}
-*/

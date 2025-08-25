@@ -15,6 +15,19 @@ int valid_entries(char *num)
     return (1);
 }
 
+int	error_duplicate(t_stack_node *a, int n)
+{
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->nbr == n)
+			return (1);
+		a = a->next;
+	}
+	return (0);
+}
+
 void	free_stack(t_stack_node **stack)
 {
 	t_stack_node	*tmp;
@@ -32,3 +45,9 @@ void	free_stack(t_stack_node **stack)
 	*stack = NULL;
 }
 
+void	free_errors(t_stack_node **a)
+{
+	free_stack(a);
+	ft_printf("Error\n");
+	exit(1);
+}
