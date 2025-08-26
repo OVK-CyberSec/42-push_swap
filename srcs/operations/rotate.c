@@ -8,7 +8,7 @@ static void	rotate(t_stack_node **stack)
 	len = stack_len(*stack);
 	if (NULL == stack || NULL == *stack || 1 == len)
 		return ;
-	last_node = find_last_node(*stack);
+	last_node = find_last(*stack);
 	last_node->next = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;

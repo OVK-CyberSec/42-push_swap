@@ -21,6 +21,6 @@ int	main(int argc, char **argv) //Define a program that takes in a random input 
 		else
 			sort_stacks(&a, &b); //If not, and there are more than three numbers, call the sort stacks algorithm
 	}
-	free_stack(&a); //Clean up the stack
+	free_stack(&a);
 	return (0);
 }

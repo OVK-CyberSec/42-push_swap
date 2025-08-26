@@ -8,7 +8,7 @@ static void	reverse_rotate(t_stack_node **stack)
 	len = stack_len(*stack);
 	if (NULL == *stack || NULL == stack || 1 == len)
 		return ;
-	last = find_last_node(*stack);
+	last = find_last(*stack);
 	last->prev->next = NULL;
 	last->next = *stack;
 	last->prev = NULL;
