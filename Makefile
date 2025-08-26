@@ -1,10 +1,13 @@
+# Standard
 NAME				= push_swap
 
+# Directories
 LIBFT				= ./libft/libft.a
-INC					= includes/
+INC					= inc/
 SRC_DIR				= srcs/
 OBJ_DIR				= obj/
 
+# Compiler and CFlags
 CC					= gcc
 CFLAGS				= -Wall -Werror -Wextra -I
 RM					= rm -f
@@ -24,10 +27,13 @@ PUSH_SWAP_DIR		=	$(SRC_DIR)utils/handle_errors.c \
 						$(SRC_DIR)utils/stack_utils.c
 
 
+# Concatenate all source files
 SRCS 				= $(COMMANDS_DIR) $(PUSH_SWAP_DIR)
 
+# Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
 OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
+# Build rules
 start:				
 					@make all
 
@@ -37,7 +43,9 @@ $(LIBFT):
 all: 				$(NAME)
 
 $(NAME): 			$(OBJ) $(LIBFT)
+					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
 
+# Compile object files from source files
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
 					@mkdir -p $(@D)
 					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
@@ -52,4 +60,5 @@ fclean: 			clean
 
 re: 				fclean all
 
+# Phony targets represent actions not files
 .PHONY: 			start all clean fclean re

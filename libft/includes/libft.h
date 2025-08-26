@@ -7,8 +7,10 @@
 # include <stdint.h>
 # include <stdio.h>
 
-char			**split(char *s, char c);
-
+char			**ft_split(const char *s, char c);
+int	is_separator(char c, char sep);
+int	count_words(const char *str, char sep);
+char	*word_splitter(char *str, char sep);
 int	ft_isdigit(int value);
-
+void free_split(char **split);
 #endif

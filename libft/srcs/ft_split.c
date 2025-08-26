@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 16:59:01 by mohifdi           #+#    #+#             */
-/*   Updated: 2025/04/11 18:50:47 by mohifdi          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 #include "../../includes/push_swap.h"
 
 int	is_separator(char c, char sep)
@@ -82,4 +71,16 @@ char	**ft_split(char const *s, char c)
 	}
 	words[j] = 0;
 	return (words);
+}
+
+void free_split(char **split)
+{
+    int i = 0;
+
+    while (split[i])
+    {
+        free(split[i]);
+        i++;
+    }
+    free(split);
 }
