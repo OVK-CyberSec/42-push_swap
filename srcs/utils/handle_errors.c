@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_errors.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/04 17:53:31 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/09/04 18:02:24 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
-int valid_entries(char *num)
+int	valid_entries(char *num)
 {
-    if (*num == '+' || *num == '-')
-        num++;
-    if (*num == '\0')
-        return (0);
-    while (*num)
+	if (*num == '+' || *num == '-')
+		num++;
+	if (*num == '\0')
+		return (0);
+	while (*num)
 	{
 		if (*num < '0' || *num > '9')
 			return (0);
 		num++;
 	}
-    return (1);
+	return (1);
 }
 
 int	error_syntax(char *str_n)

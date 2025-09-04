@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/04 17:59:46 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/09/04 18:01:50 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 int	stack_len(t_stack_node *stack)
 {
 	int	count;
 
-	if (!stack) 
+	if (!stack)
 		return (0);
 	count = 0;
 	while (stack)
@@ -26,12 +38,12 @@ t_stack_node	*find_last(t_stack_node *stack)
 
 bool	stack_sorted(t_stack_node *stack)
 {
-    while (stack && stack->next)
-    {
-        if (stack->nbr > stack->next->nbr)
-            return (0);
-        stack = stack->next;
-    }
+	while (stack && stack->next)
+	{
+		if (stack->nbr > stack->next->nbr)
+			return (0);
+		stack = stack->next;
+	}
 	return (true);
 }
 
@@ -52,12 +64,12 @@ t_stack_node	*find_min(t_stack_node *stack)
 		}
 		stack = stack->next;
 	}
-	return (min_node); 
+	return (min_node);
 }
 
 t_stack_node	*find_max(t_stack_node *stack)
 {
-	long			max; 
+	long			max;
 	t_stack_node	*max_node;
 
 	if (!stack)

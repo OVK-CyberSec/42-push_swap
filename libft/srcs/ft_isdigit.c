@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/04 17:31:02 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/09/04 17:31:16 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/libft.h"
 
 int	ft_isdigit(int value)
@@ -6,17 +18,3 @@ int	ft_isdigit(int value)
 		return (value > 0);
 	return (0);
 }
-
-/*
-int main()
-{
-    char c;
-    c='0';
-    printf("Result when numeric character is passed: %d", isdigit(c));
-
-    c='+';
-    printf("\nResult when non-numeric character is passed: %d", isdigit(c));
-
-    return 0;
-}
-*/

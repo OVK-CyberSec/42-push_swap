@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/04 17:25:27 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/09/04 18:48:59 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -6,7 +18,7 @@
 # include "../libft/includes/libft.h"
 # include "../libft/includes/ft_printf.h"
 
-typedef struct s_stack_node 
+typedef struct s_stack_node
 {
 	int					nbr;
 	int					index;
@@ -19,7 +31,7 @@ typedef struct s_stack_node
 }	t_stack_node;
 
 //***Handle errors
-int				error_syntax(char *str_n); 
+int				error_syntax(char *str_n);
 int				error_duplicate(t_stack_node *a, int n);
 int				valid_entries(char *num);
 void			free_stack(t_stack_node **stack);
@@ -36,7 +48,7 @@ void			current_index(t_stack_node *stack);
 void			set_cheapest(t_stack_node *stack);
 t_stack_node	*get_cheapest(t_stack_node *stack);
 void			prep_for_push(t_stack_node **s, t_stack_node *n, char c);
-void	set_target_b(t_stack_node *a, t_stack_node *b);
+void			set_target_b(t_stack_node *a, t_stack_node *b);
 
 //***Stack utils
 int				stack_len(t_stack_node *stack);
@@ -44,6 +56,10 @@ t_stack_node	*find_last(t_stack_node *stack);
 bool			stack_sorted(t_stack_node *stack);
 t_stack_node	*find_min(t_stack_node *stack);
 t_stack_node	*find_max(t_stack_node *stack);
+void			rev_rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
 
 //***Commands
 void			sa(t_stack_node **a, bool print);

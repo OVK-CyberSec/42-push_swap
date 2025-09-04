@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohifdi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/04 18:03:23 by mohifdi           #+#    #+#             */
+/*   Updated: 2025/09/04 18:16:40 by mohifdi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../includes/push_swap.h"
 
 static void	reverse_rotate(t_stack_node **stack)
@@ -14,6 +26,15 @@ static void	reverse_rotate(t_stack_node **stack)
 	last->prev = NULL;
 	*stack = last;
 	last->next->prev = last;
+}
+
+void	rev_rotate_both(t_stack_node **a,
+			t_stack_node **b, t_stack_node *cheapest_node)
+{
+	while (*b != cheapest_node->target_node && *a != cheapest_node)
+		rrr(a, b, false);
+	current_index(*a);
+	current_index(*b);
 }
 
 void	rra(t_stack_node **a, bool print)
