@@ -79,3 +79,7 @@ void			sort_three(t_stack_node **a);
 void			sort_stacks(t_stack_node **a, t_stack_node **b);
 
 #endif
+
+//*** Memory utils
+void free_split(char **split);
+void clean_and_exit(t_stack_node **a, t_stack_node **b, char **args, int code);

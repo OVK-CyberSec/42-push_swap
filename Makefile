@@ -24,7 +24,8 @@ PUSH_SWAP_DIR		=	$(SRC_DIR)utils/handle_errors.c \
 						$(SRC_DIR)utils/init_b_to_a.c \
 						$(SRC_DIR)push_swap.c \
 						$(SRC_DIR)utils/stack_init.c \
-						$(SRC_DIR)utils/stack_utils.c
+						$(SRC_DIR)utils/stack_utils.c \
+						$(SRC_DIR)utils/mem_utils.c
 
 
 # Concatenate all source files
